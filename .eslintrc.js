@@ -42,5 +42,11 @@ module.exports = {
         tabWidth: 2,
       },
     ],
+    'no-unused-vars': [
+      "error",
+      {
+        argsIgnorePattern: '^_'
+      }
+    ],
   },
 }

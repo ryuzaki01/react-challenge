@@ -2,15 +2,27 @@
   "tasks": [
     {
       "id": 1,
-      "title": "Finish an interview"
+      "title": "Finish an interview",
+      "checked": true
     },
     {
       "id": 2,
-      "title": "Study React"
+      "title": "Study React",
+      "checked": true
     },
     {
       "id": 3,
-      "title": "Submit a test result"
+      "title": "Submit a test result",
+      "checked": true
+    },
+    {
+      "title": "Create test unit",
+      "id": 4,
+      "checked": false
+    },
+    {
+      "title": "Get a food",
+      "id": 5
     }
   ]
 }

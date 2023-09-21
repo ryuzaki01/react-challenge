@@ -3,16 +3,26 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.4.2",
+    "@fortawesome/free-solid-svg-icons": "^6.4.2",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@radix-ui/colors": "^3.0.0-rc.4",
+    "@radix-ui/react-toast": "^1.1.4",
+    "@stitches/react": "^1.2.8",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3",
+    "framer-motion": "^10.16.4",
+    "node-polyfill-webpack-plugin": "^2.0.1",
+    "react": "^18.0",
+    "react-dom": "^18.0",
+    "react-scripts": "latest",
+    "swr": "^2.2.2",
+    "uuid": "^9.0.1",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "REACT_APP_DEV_DISABLE_ESLINT=true react-scripts start",
+    "start": "DISABLE_ESLINT_PLUGIN=true react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -57,6 +67,8 @@
     "fetch-mock": "^9.11.0",
     "json-server": "^0.17.0",
     "node-fetch": "^3.1.0",
-    "prettier": "^2.4.1"
-  }
+    "prettier": "^2.4.1",
+    "prop-types": "^15.8.1"
+  },
+  "packageManager": "yarn@3.6.3"
 }

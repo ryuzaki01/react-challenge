@@ -1,12 +1,13 @@
+import { globalReset } from './stitches.config'
+import Layout from './components/Layout'
 import TodoList from './components/TodoList'
-import './App.css'
 
 export default function App() {
+  globalReset()
+
   return (
-    <div className="App">
-      <div className="App-container">
-        <TodoList />
-      </div>
-    </div>
+    <Layout>
+      <TodoList />
+    </Layout>
   )
 }
