@@ -33,8 +33,8 @@ const TodoItem = ({ data, onDelete, onCheck }) => {
         <Input
           type="checkbox"
           defaultChecked={data?.checked}
+          data-testid="todo-check"
           onChange={(e) => {
-            console.log(e.target)
             onCheck(data?.id, !!e.target.checked)
           }}
         />
@@ -44,6 +44,7 @@ const TodoItem = ({ data, onDelete, onCheck }) => {
         <Button
           size="xs"
           color="red"
+          data-testid="todo-delete"
           onClick={() => {
             onDelete(data?.id)
           }}
@@ -52,7 +53,9 @@ const TodoItem = ({ data, onDelete, onCheck }) => {
             icon={faTrashCan}
             style={{ width: 16, height: 16 }}
           />
-          <Text>Delete</Text>
+          <Text css={{ display: 'none', '@md': { display: 'block' } }}>
+            Delete
+          </Text>
         </Button>
       </Flex>
     </AnimatedFlex>

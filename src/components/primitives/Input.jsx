@@ -20,6 +20,9 @@ export const StyledInput = styled('input', {
     backgroundColor: '$gray2',
     color: '$gray9',
   },
+  '&:invalid': {
+    boxShadow: 'inset 0 0 0 2px $colors$crimson6',
+  },
   '&[type="checkbox"]': {
     p: 0,
     borderRadius: 0,
@@ -53,21 +56,9 @@ export const StyledInput = styled('input', {
 })
 
 const Input = forwardRef(
-  (
-    { _children, icon, css, containerCss, iconStyles, ...props },
-    forwardedRef,
-  ) => (
+  ({ _children, css, containerCss, ...props }, forwardedRef) => (
     <Flex css={{ ...containerCss, position: 'relative' }}>
-      {icon && (
-        <div style={{ position: 'absolute', top: 16, left: 16, ...iconStyles }}>
-          {icon}
-        </div>
-      )}
-      <StyledInput
-        css={{ pl: icon ? 48 : 16, ...css }}
-        ref={forwardedRef}
-        {...props}
-      />
+      <StyledInput css={{ pl: 16, ...css }} ref={forwardedRef} {...props} />
     </Flex>
   ),
 )

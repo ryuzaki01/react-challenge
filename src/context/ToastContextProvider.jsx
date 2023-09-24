@@ -2,6 +2,7 @@ import { useState, createContext } from 'react'
 import { Provider as ToastProvider } from '@radix-ui/react-toast'
 import Toast, { ToastViewport } from '../components/primitives/Toast'
 import { v4 as uuidv4 } from 'uuid'
+import propTypes from 'prop-types'
 
 export const ToastContext = createContext({
   toasts: [],
@@ -37,6 +38,10 @@ const ToastContextProvider = ({ children }) => {
       </ToastProvider>
     </ToastContext.Provider>
   )
+}
+
+ToastContextProvider.propTypes = {
+  children: propTypes.node,
 }
 
 export default ToastContextProvider

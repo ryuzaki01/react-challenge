@@ -21,8 +21,13 @@
       "checked": false
     },
     {
-      "title": "Get a food",
+      "title": "Get some food",
       "id": 5
+    },
+    {
+      "title": "Add another task",
+      "id": 6,
+      "checked": true
     }
   ]
 }

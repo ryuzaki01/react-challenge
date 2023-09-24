@@ -237,17 +237,6 @@ export const { createTheme, keyframes, styled, globalCss, getCssText } =
         width: value,
         height: value,
       }),
-      // GRID
-      colSpan: (value) => {
-        if (value === 'full') {
-          return {
-            gridColumn: '1 / -1',
-          }
-        }
-        return {
-          gridColumn: `span ${value} / span ${value}`,
-        }
-      },
     },
     media: {
       xs: '(min-width: 300px)',

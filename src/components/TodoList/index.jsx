@@ -1,12 +1,11 @@
 import { AnimatePresence } from 'framer-motion'
+import { faListCheck } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { Box, Button, Flex, Input, Text } from '../primitives'
 import TodoItem from '../TodoItem'
 import useTasks from '../../hooks/useTasks'
-import { useContext } from 'react'
-import { ToastContext } from '../../context/ToastContextProvider'
-import { faListCheck } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import useToast from '../../hooks/useToast'
 
 /**
  * TODO List
@@ -15,7 +14,7 @@ export default function TodoList() {
   const { data: tasks, mutate } = useTasks({
     refreshInterval: 5000,
   })
-  const { addToast } = useContext(ToastContext)
+  const { addToast } = useToast()
 
   const handleDeleteTask = async (id) => {
     await fetch(`http://localhost:3001/tasks/${id}`, {
@@ -73,6 +72,7 @@ export default function TodoList() {
 
   return (
     <Box
+      data-testid="todo-list"
       css={{
         height: '100%',
         width: 'calc(100% - 32px)',
@@ -108,6 +108,7 @@ export default function TodoList() {
         </Flex>
         <Flex
           as="form"
+          data-testid="todo-form"
           css={{
             flexDirection: 'column',
             gap: 10,
@@ -119,6 +120,11 @@ export default function TodoList() {
         >
           <Input
             required
+            data-testid="task-title"
+            onInput={(e) => e.target.setCustomValidity('')}
+            onInvalid={(e) =>
+              e.target.setCustomValidity('Please set your task title')
+            }
             css={{
               width: '100%',
               '@md': {
@@ -131,6 +137,7 @@ export default function TodoList() {
           <Button
             color="primary"
             type="submit"
+            data-testid="task-submit"
             css={{
               display: 'inline-block',
             }}
